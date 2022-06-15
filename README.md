@@ -14,7 +14,7 @@ func main() {
 		// do something with msg
 	}
 
-	cancel, err := ipmq.Register(someConsumerFn)
+	cancel, err := q.Register(someConsumerFn)
 	if err != nil {
 		// registration failed, do something
 	}
@@ -29,3 +29,5 @@ func main() {
 }
 
 ```
+
+If there is a need for multiple 'topics', simply instantiate multiple instances of `ipmq.MQ` via `ipmq.New`.
